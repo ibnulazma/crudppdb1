@@ -201,8 +201,6 @@ class Admin extends BaseController
         return redirect()->to(base_url('ppdb'));
     }
     public function siswaMI()
-
-
     {
         $data = [
             'title'      => 'SIAKADINKA',
@@ -281,5 +279,18 @@ class Admin extends BaseController
             session()->setFlashdata('pesan', $pesan);
             return redirect()->to('admin');
         }
+    }
+
+    public function cetakMI()
+    {
+        $data = [
+            'title'      => 'SIAKADINKA',
+            'subtitle'   => 'PESERTA DIDIK Dari MI',
+            'ppdb'       => $this->ModelPpdb->AllData(),
+            'ta'         => $this->ModelTa->AllData(),
+            'sekolah'    => $this->ModelSekolah->AllData(),
+            'mi'         => $this->ModelPpdb->dataMI(),
+        ];
+        return view('ppdb/cetak_mi', $data);
     }
 }
