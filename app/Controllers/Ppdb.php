@@ -102,6 +102,7 @@ class Ppdb extends BaseController
 
                 ]
             ],
+
             'nama_lengkap' => [
                 'label' => 'Nama Lengkap',
                 'rules' => 'required',
@@ -111,6 +112,13 @@ class Ppdb extends BaseController
             ],
             'tempat_lahir' => [
                 'label' => 'Tempat Lahir',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi'
+                ]
+            ],
+            'jenis_kelamin' => [
+                'label' => 'Jenis Kelamin',
                 'rules' => 'required',
                 'errors' => [
                     'required' => '{field} harus diisi'

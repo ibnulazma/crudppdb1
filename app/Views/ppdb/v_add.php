@@ -37,11 +37,14 @@ $ta = $db->table('tbl_ta')
                     </div>
                     <div class="mb-2">
                         <label for="">Jenis Kelamin</label>
-                        <select name="jenis_kelamin" class="form-control" id="">
+                        <select name="jenis_kelamin" class="form-control <?= ($validation->hasError('jenis_kelamin')) ? 'is-invalid' : ''; ?>" id="">
                             <option value="">--Jenis Kelamin--</option>
                             <option value="Laki-laki">Laki-laki</option>
                             <option value="Perempuan">Perempuan</option>
                         </select>
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('jenis_kelamin'); ?>
+                        </div>
                     </div>
                     <div class="mb-2">
                         <label for="">Tempat Lahir</label>
