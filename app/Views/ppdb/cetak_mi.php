@@ -55,8 +55,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <body>
 
+    <div class="text-center">
+        <h5>DAFTAR PESERTA DIDIK DARI MADRASAH IBTIDAIYYAH</h5>
+        <h5>SMPS INSAN KAMIL</h5>
+        <p>NPSN: 69765093</p>
+        <p>Jalan Raya Legok KM 06 No 89 RT 07 RW 0</p>
+    </div>
 
-    <h5 class="text-center">DAFTAR PESERTA DIDIK DARI MADRASAH IBTIDAIYYAH</h5>
 
 
 
