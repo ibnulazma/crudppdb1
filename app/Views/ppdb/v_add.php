@@ -68,12 +68,15 @@ $ta = $db->table('tbl_ta')
                     </div>
                     <div class="mb-2">
                         <label for="">Jenjang</label>
-                        <select name="id_jenjang" class="form-control" id="jenjang">
+                        <select name="id_jenjang" class="form-control <?= ($validation->hasError('id_jenjang')) ? 'is-invalid' : ''; ?>" id="jenjang">
                             <option value="">--Jenis Sekolah--</option>
                             <?php foreach ($jenjang as $key => $value) { ?>
                                 <option value="<?= $value['id_jenjang'] ?>"><?= $value['jenjang'] ?></option>
                             <?php } ?>
                         </select>
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('id_jenjang'); ?>
+                        </div>
                     </div>
                     <div class="mb-2">
                         <label for="">Nama Sekolah</label>

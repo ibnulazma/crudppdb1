@@ -94,8 +94,6 @@ $ta = $db->table('tbl_ta')
                     <?php } ?>
                 </tbody>
             </table>
-
-
         </div>
     </div>
 </div>

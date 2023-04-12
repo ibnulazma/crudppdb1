@@ -131,6 +131,14 @@ class Ppdb extends BaseController
                 ]
             ],
 
+            'id_jenjang' => [
+                'label' => 'Jenjang',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus dipilih'
+                ]
+            ],
+
 
         ])) {
 
