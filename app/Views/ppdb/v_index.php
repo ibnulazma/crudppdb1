@@ -40,7 +40,7 @@ $ta = $db->table('tbl_ta')
         <div class="card-body">
             <table id="example1" class="table table-bordered table-hover ">
                 <thead>
-                    <tr>
+                    <tr class="text-center">
                         <th>No</th>
                         <th>Nama Lengkap</th>
                         <th>Jenis Kelamin</th>
@@ -65,7 +65,7 @@ $ta = $db->table('tbl_ta')
                             <td><?= $value['no_telp'] ?></td>
                             <td><?= $value['alamat'] ?></td>
                             <td><?= $value['nama_ibu'] ?></td>
-                            <td><?= $value['jenjang'] ?></td>
+                            <td class="text-center"><?= $value['jenjang'] ?></td>
                             <td><?= $value['sekolah'] ?></td>
                             <td>
                                 <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#detail<?= $value['id_ppdb'] ?>"><i class="fas fa-eye"></i></button>
@@ -143,6 +143,15 @@ $ta = $db->table('tbl_ta')
                             <div class=" mb-2">
                                 <label for="">No Telp</label>
                                 <input type="text" class="form-control" name="no_telp" value="<?= $value['no_telp'] ?>">
+                            </div>
+                            <div class="mb-2">
+                                <label for="">Nama Sekolah</label>
+                                <select name="id_sekolah" class="form-control select2bs4" style="width: 100%;">
+                                    <option value="<?= $value['id_sekolah'] ?>" selected="selected"><?= $value['sekolah'] ?></option>
+                                    <?php foreach ($sekolah as $key => $value) { ?>
+                                        <option value="<?= $value['id_sekolah'] ?>"><?= $value['sekolah'] ?></option>
+                                    <?php } ?>
+                                </select>
                             </div>
 
                         </div>

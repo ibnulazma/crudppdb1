@@ -83,8 +83,8 @@ $ta = $db->table('tbl_ta')
                     </div>
                     <div class="mb-2">
                         <label for="">Nama Sekolah</label>
-                        <select name="id_sekolah" class="form-control select2bs4" style="width: 100%;" id="asal_sekolah">>
-                            <option value="">--Pilih Sekolah--</option>
+                        <select name="id_sekolah" class="form-control select2bs4" style="width: 100%;" id="asal_sekolah">
+
                         </select>
                     </div>
                     <div class="mb-2">

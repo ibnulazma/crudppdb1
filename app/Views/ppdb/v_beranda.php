@@ -70,7 +70,7 @@ $ta = $db->table('tbl_ta')
 <div class="col-md-6">
     <div class="card card-primary">
         <div class="card-header">
-            <h3 class="card-title"> Jumlah Peserta Didik Baru berdasarkan Asal Sekolah Tahun <?= $ta['ta'] ?></h3>
+            <h3 class="card-title"> Jumlah Peserta Didik Baru berdasarkan <strong> Asal Sekolah Tahun</strong> <?= $ta['ta'] ?></h3>
         </div>
         <div class="card-body">
             <table class="table table-bordered" id="example2">

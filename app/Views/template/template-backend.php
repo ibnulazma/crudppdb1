@@ -167,12 +167,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="<?= base_url('ppdb') ?>" class="nav-link">
-                                        <i class=" far fa-circle nav-icon "></i>
-                                        <p>Data Peserta Didik</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
                                     <a href="<?= base_url('ppdb/siswaMI') ?>" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>MI</p>

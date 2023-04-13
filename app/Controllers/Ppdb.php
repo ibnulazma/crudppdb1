@@ -191,6 +191,7 @@ class Ppdb extends BaseController
             'nama_ibu'      => $this->request->getPost('nama_ibu'),
             'no_telp'       => $this->request->getPost('no_telp'),
             'tanggal_lahir' => $this->request->getPost('tanggal_lahir'),
+            'id_sekolah' => $this->request->getPost('id_sekolah'),
 
         ];
         $this->ModelPpdb->edit($data);
