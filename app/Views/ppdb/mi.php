@@ -15,7 +15,7 @@
         </div>
         <div class="card-body">
 
-            <a href="<?= base_url('admin/cetakMi') ?>" class="btn btn-primary">Cetak Laporan MI</a>
+            <a href="<?= base_url('ppdb/printpdf') ?>" class="btn btn-primary">Cetak Laporan MI</a>
             <table id="example2" class="table table-bordered table-hover ">
                 <thead>
                     <tr>

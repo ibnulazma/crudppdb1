@@ -6,6 +6,7 @@ use App\Models\ModelPpdb;
 use App\Models\ModelTa;
 use App\Models\ModelSekolah;
 use App\Models\ModelJenjang;
+use Dompdf\Dompdf;
 
 class Ppdb extends BaseController
 {
@@ -213,8 +214,6 @@ class Ppdb extends BaseController
         return redirect()->to(base_url('ppdb'));
     }
     public function siswaMI()
-
-
     {
         $data = [
             'title'      => 'SIAKADINKA',
@@ -276,5 +275,29 @@ class Ppdb extends BaseController
             echo '<option value="' . $value['id_sekolah'] . '">' . $value['sekolah'] . '</option>
            ';
         }
+    }
+
+
+    public function printpdf()
+    {
+        $data = [
+            'mi'         => $this->ModelPpdb->dataMI(),
+        ];
+        $html = view('ppdb/printpdf', $data);
+
+
+
+        // instantiate and use the dompdf class
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($html);
+
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('Legal', 'landscape');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream();
     }
 }
