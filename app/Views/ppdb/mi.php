@@ -1,24 +1,57 @@
-<?= $this->extend('template/template-backend') ?>
-<?= $this->section('content') ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- Main content -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title><?= $title ?></title>
+</head>
 
 
 
-<div class="col-md-12">
-    <h3 class="text-center">Peserta Didik Baru Dari MI</h3>
-</div>
+<style>
+    table,
+    td,
+    th {
+        border: 1px solid #333;
+    }
 
-<div class="col-md-12">
-    <div class="card">
-        <div class="card-header">
+    table {
+        width: 100%;
+    }
+
+    @page {
+        margin: 10px;
+    }
+</style>
+
+
+
+<body>
+    <div class="container">
+        <div class="text-center">
+            <h3>Peserta Didik Baru Dari MI</h3>
         </div>
-        <div class="card-body">
+        <?php
+        $pdf = false;
 
-            <a href="<?= base_url('ppdb/printpdf') ?>" class="btn btn-primary">Cetak Laporan MI</a>
-            <table id="example2" class="table table-bordered table-hover ">
+
+        if (strpos(current_url(), "printpdf")) {
+            $pdf = true;
+        }
+        if ($pdf == false) {
+
+
+        ?>
+
+        <?php } ?>
+
+        <div class="container">
+            <table>
                 <thead>
-                    <tr>
+                    <tr class="text-center">
                         <th>No</th>
                         <th>Nama Lengkap</th>
                         <th>Jenis Kelamin</th>
@@ -51,8 +84,10 @@
                     <?php } ?>
                 </tbody>
             </table>
-        </div>
-    </div>
-</div>
 
-<?= $this->endSection() ?>
+        </div>
+</body>
+
+</html>
+
+<!-- Main content -->
