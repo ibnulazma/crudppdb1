@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <title><?= $title ?></title>
-</head>
-
-
-
 <style>
     table,
     td,
@@ -22,36 +9,41 @@
         width: 100%;
     }
 
+    td {
+        text-align: center;
+    }
+
     @page {
         margin: 10px;
     }
 
     .paragraf {
-        align-items: center;
+        text-align: center;
     }
 </style>
 
 
 
 <body>
+
+    <?php
+    $pdf = false;
+
+
+    if (strpos(current_url(), "printpdf")) {
+        $pdf = true;
+    }
+    if ($pdf == false) {
+
+
+    ?>
+
+    <?php } ?>
     <div class="container">
         <div class="paragraf">
-            <h3 class="text-center">Peserta Didik Baru Dari MI</h3>
+            <h3 class="">Peserta Didik Baru Dari MI</h3>
+            <h4>SMPS INSAN KAMIL Kec. Legok | 69765093</h4>
         </div>
-        <?php
-        $pdf = false;
-
-
-        if (strpos(current_url(), "printpdf")) {
-            $pdf = true;
-        }
-        if ($pdf == false) {
-
-
-        ?>
-
-        <?php } ?>
-
         <div class="container">
             <table>
                 <thead>
@@ -64,7 +56,7 @@
                         <th>Tempat Lahir</th>
                         <th>Tanggal Lahir</th>
                         <th>Nama Ibu</th>
-                        <th>Sekolah</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -81,7 +73,7 @@
                             <td><?= $value['tempat_lahir'] ?></td>
                             <td><?= $value['tanggal_lahir'] ?></td>
                             <td><?= $value['nama_ibu'] ?></td>
-                            <td><?= $value['sekolah'] ?></td>
+
                         </tr>
                     <?php } ?>
                 </tbody>

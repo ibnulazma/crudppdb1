@@ -225,8 +225,6 @@ class Ppdb extends BaseController
         ];
         $html = view('ppdb/mi', $data);
 
-
-
         // instantiate and use the dompdf class
         $dompdf = new Dompdf();
         $dompdf->loadHtml($html);
