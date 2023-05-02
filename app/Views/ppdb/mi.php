@@ -25,14 +25,18 @@
     @page {
         margin: 10px;
     }
+
+    .paragraf {
+        align-items: center;
+    }
 </style>
 
 
 
 <body>
     <div class="container">
-        <div class="text-center">
-            <h3>Peserta Didik Baru Dari MI</h3>
+        <div class="paragraf">
+            <h3 class="text-center">Peserta Didik Baru Dari MI</h3>
         </div>
         <?php
         $pdf = false;
@@ -59,7 +63,6 @@
                         <th>NISN</th>
                         <th>Tempat Lahir</th>
                         <th>Tanggal Lahir</th>
-                        <th>Alamat</th>
                         <th>Nama Ibu</th>
                         <th>Sekolah</th>
                     </tr>
@@ -77,7 +80,6 @@
                             <td><?= $value['nisn'] ?></td>
                             <td><?= $value['tempat_lahir'] ?></td>
                             <td><?= $value['tanggal_lahir'] ?></td>
-                            <td><?= $value['alamat'] ?></td>
                             <td><?= $value['nama_ibu'] ?></td>
                             <td><?= $value['sekolah'] ?></td>
                         </tr>
