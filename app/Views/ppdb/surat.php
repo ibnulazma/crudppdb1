@@ -91,7 +91,7 @@
     });
 
     async function getSiswa(id_ppdb) {
-        let response = await fetch('api/home/' + id_ppdb)
+        let response = await fetch('/api/home/' + id_ppdb)
         let data = await response.json();
 
         return data;
