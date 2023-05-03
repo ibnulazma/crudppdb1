@@ -71,6 +71,7 @@ class Filters extends BaseConfig
                     'mapel', 'mapel/*',
                     'tinggal', 'tinggal/*',
                     'transportasi', 'transportasi/*',
+                    'surat', 'surat/*',
 
                 ]
             ],

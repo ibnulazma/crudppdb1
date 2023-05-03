@@ -182,6 +182,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
 
                         <li class="nav-item ">
+                            <a href="<?= base_url('surat') ?>" class="nav-link ">
+                                <i class=" nav-icon fas fa-envelope"></i>
+                                <p>
+                                    Surat
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
                             <a href="<?= base_url('auth/logout') ?>" class="nav-link ">
                                 <i class=" nav-icon fas fa-sign-out-alt"></i>
                                 <p>
