@@ -47,7 +47,7 @@ class ModelSekolah extends Model
     }
     public function getSiswa($id_sekolah)
     {
-        return $this->db->table('tbl_ppdb')
+        return $this->db->table('siswa')
             ->where('id_sekolah', $id_sekolah)
             ->get()
             ->getResultArray();

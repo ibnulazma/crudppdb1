@@ -10,10 +10,10 @@ class Home extends ResourceController
 {
     use ResponseTrait;
 
-    public function show($id_ppdb = null)
+    public function show($id = null)
     {
         $model = new Suratmodel();
-        $data = $model->find($id_ppdb);
+        $data = $model->find($id);
 
         return $this->respond($data);
     }

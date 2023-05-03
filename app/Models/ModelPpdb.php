@@ -9,11 +9,11 @@ class ModelPpdb extends Model
 
     public function AllData()
     {
-        return $this->db->table('tbl_ppdb')
-            ->join('tbl_sekolah', 'tbl_sekolah.id_sekolah = tbl_ppdb.id_sekolah', 'left')
-            ->join('tbl_ta', 'tbl_ta.id_ta = tbl_ppdb.id_tahun', 'left')
-            ->join('tbl_jenjang', 'tbl_jenjang.id_jenjang = tbl_ppdb.id_jenjang', 'left')
-            ->orderBy('id_ppdb')
+        return $this->db->table('siswa')
+            ->join('tbl_sekolah', 'tbl_sekolah.id_sekolah = siswa.id_sekolah', 'left')
+            ->join('tbl_ta', 'tbl_ta.id_ta = siswa.id_tahun', 'left')
+            ->join('tbl_jenjang', 'tbl_jenjang.id_jenjang = siswa.id_jenjang', 'left')
+            ->orderBy('id')
             ->where('status', '1')
             // ->get($limit, $start)
             ->get()
@@ -21,29 +21,29 @@ class ModelPpdb extends Model
     }
     public function add($data)
     {
-        $this->db->table('tbl_ppdb')
+        $this->db->table('siswa')
             ->insert($data);
     }
 
     public function edit($data)
     {
-        $this->db->table('tbl_ppdb')
-            ->where('id_ppdb', $data['id_ppdb'])
+        $this->db->table('siswa')
+            ->where('id', $data['id'])
             ->update($data);
     }
     public function delete_data($data)
     {
-        $this->db->table('tbl_ppdb')
-            ->where('id_ppdb', $data['id_ppdb'])
+        $this->db->table('siswa')
+            ->where('id', $data['id'])
             ->delete($data);
     }
 
     public function dataMI()
     {
-        return $this->db->table('tbl_ppdb')
-            ->join('tbl_sekolah', 'tbl_sekolah.id_sekolah = tbl_ppdb.id_sekolah', 'left')
-            ->join('tbl_jenjang', 'tbl_jenjang.id_jenjang = tbl_ppdb.id_jenjang', 'left')
-            ->join('tbl_ta', 'tbl_ta.id_ta = tbl_ppdb.id_tahun', 'left')
+        return $this->db->table('siswa')
+            ->join('tbl_sekolah', 'tbl_sekolah.id_sekolah = siswa.id_sekolah', 'left')
+            ->join('tbl_jenjang', 'tbl_jenjang.id_jenjang = siswa.id_jenjang', 'left')
+            ->join('tbl_ta', 'tbl_ta.id_ta = siswa.id_tahun', 'left')
             ->orderBy('nama_lengkap', 'ASC')
             ->where('jenjang', 'MI')
             ->where('status', '1')
@@ -51,10 +51,10 @@ class ModelPpdb extends Model
     }
     public function dataSD()
     {
-        return $this->db->table('tbl_ppdb')
-            ->join('tbl_sekolah', 'tbl_sekolah.id_sekolah = tbl_ppdb.id_sekolah', 'left')
-            ->join('tbl_jenjang', 'tbl_jenjang.id_jenjang = tbl_ppdb.id_jenjang', 'left')
-            ->join('tbl_ta', 'tbl_ta.id_ta = tbl_ppdb.id_tahun', 'left')
+        return $this->db->table('siswa')
+            ->join('tbl_sekolah', 'tbl_sekolah.id_sekolah = siswa.id_sekolah', 'left')
+            ->join('tbl_jenjang', 'tbl_jenjang.id_jenjang = siswa.id_jenjang', 'left')
+            ->join('tbl_ta', 'tbl_ta.id_ta = siswa.id_tahun', 'left')
             ->orderBy('nama_lengkap', 'ASC')
             ->where('jenjang', 'SD')
             ->where('status', '1')
@@ -62,51 +62,51 @@ class ModelPpdb extends Model
     }
     public function jumlahTotal()
     {
-        return $this->db->table('tbl_ppdb')
-            ->join('tbl_ta', 'tbl_ta.id_ta = tbl_ppdb.id_tahun', 'left')
+        return $this->db->table('siswa')
+            ->join('tbl_ta', 'tbl_ta.id_ta = siswa.id_tahun', 'left')
             ->where('status', '1')
             ->countAllResults();
     }
     public function jumlahLaki()
     {
-        return $this->db->table('tbl_ppdb')
-            ->join('tbl_ta', 'tbl_ta.id_ta = tbl_ppdb.id_tahun', 'left')
-            ->where('tbl_ppdb.jenis_kelamin', 'Laki-laki')
+        return $this->db->table('siswa')
+            ->join('tbl_ta', 'tbl_ta.id_ta = siswa.id_tahun', 'left')
+            ->where('siswa.jenis_kelamin', 'Laki-laki')
             ->where('status', '1')
             ->countAllResults();
     }
     public function jumlahPerempuan()
     {
-        return $this->db->table('tbl_ppdb')
-            ->join('tbl_ta', 'tbl_ta.id_ta = tbl_ppdb.id_tahun', 'left')
-            ->where('tbl_ppdb.jenis_kelamin', 'Perempuan')
+        return $this->db->table('siswa')
+            ->join('tbl_ta', 'tbl_ta.id_ta = siswa.id_tahun', 'left')
+            ->where('siswa.jenis_kelamin', 'Perempuan')
             ->where('status', '1')
             ->countAllResults();
     }
     public function jumlahSD()
     {
-        return $this->db->table('tbl_ppdb')
-            ->join('tbl_ta', 'tbl_ta.id_ta = tbl_ppdb.id_tahun', 'left')
-            ->join('tbl_jenjang', 'tbl_jenjang.id_jenjang = tbl_ppdb.id_jenjang', 'left')
-            ->where('tbl_ppdb.id_jenjang', '1')
+        return $this->db->table('siswa')
+            ->join('tbl_ta', 'tbl_ta.id_ta = siswa.id_tahun', 'left')
+            ->join('tbl_jenjang', 'tbl_jenjang.id_jenjang = siswa.id_jenjang', 'left')
+            ->where('siswa.id_jenjang', '1')
             ->where('status', '1')
             ->countAllResults();
     }
     public function jumlahMI()
     {
-        return $this->db->table('tbl_ppdb')
-            ->join('tbl_ta', 'tbl_ta.id_ta = tbl_ppdb.id_tahun', 'left')
-            ->join('tbl_jenjang', 'tbl_jenjang.id_jenjang = tbl_ppdb.id_jenjang', 'left')
-            ->where('tbl_ppdb.id_jenjang', '2')
+        return $this->db->table('siswa')
+            ->join('tbl_ta', 'tbl_ta.id_ta = siswa.id_tahun', 'left')
+            ->join('tbl_jenjang', 'tbl_jenjang.id_jenjang = siswa.id_jenjang', 'left')
+            ->where('siswa.id_jenjang', '2')
             ->where('status', '1')
             ->countAllResults();
     }
 
     public function group_by()
     {
-        $builder = $this->db->table('tbl_ppdb');
-        $builder->join('tbl_sekolah', 'tbl_sekolah.id_sekolah = tbl_ppdb.id_sekolah', 'left');
-        $builder->join('tbl_ta', 'tbl_ta.id_ta = tbl_ppdb.id_tahun', 'left');
+        $builder = $this->db->table('siswa');
+        $builder->join('tbl_sekolah', 'tbl_sekolah.id_sekolah = siswa.id_sekolah', 'left');
+        $builder->join('tbl_ta', 'tbl_ta.id_ta = siswa.id_tahun', 'left');
         $builder->select('sekolah, COUNT("sekolah") AS jumlah');
         $builder->groupBy('sekolah');
         $builder->where('status', '1');
@@ -117,15 +117,15 @@ class ModelPpdb extends Model
     public function group()
     {
 
-        // return $this->db->table('tbl_ppdb')
-        //     ->join('tbl_sekolah', 'tbl_sekolah.id_sekolah = tbl_ppdb.id_sekolah', 'left')
-        //     ->join('tbl_ta', 'tbl_ta.id_ta = tbl_ppdb.id_tahun', 'left')
-        //     // ->orderBy('tbl_ppdb.id_sekolah')
+        // return $this->db->table('siswa')
+        //     ->join('tbl_sekolah', 'tbl_sekolah.id_sekolah = siswa.id_sekolah', 'left')
+        //     ->join('tbl_ta', 'tbl_ta.id_ta = siswa.id_tahun', 'left')
+        //     // ->orderBy('siswa.id_sekolah')
         //     ->groupBy('sekolah', 'nama_lengkap')
         //     ->where('status', '1')
         //     ->get()
         //     ->getResultArray();
-        $sql = " SELECT * FROM tbl_ppdb INNER JOIN tbl_sekolah ON tbl_sekolah.id_sekolah = tbl_ppdb.id_sekolah ORDER BY sekolah  ";
+        $sql = " SELECT * FROM siswa INNER JOIN tbl_sekolah ON tbl_sekolah.id_sekolah = siswa.id_sekolah ORDER BY sekolah  ";
         return $this->db->query($sql)->getResultArray();
     }
 }

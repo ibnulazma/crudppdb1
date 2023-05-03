@@ -97,7 +97,7 @@ class Admin extends BaseController
         if ($this->validate([
             'nik' => [
                 'label' => 'NIK',
-                'rules' => 'required|min_length[16]|is_unique[tbl_ppdb.nik]',
+                'rules' => 'required|min_length[16]|is_unique[siswa.nik]',
                 'errors' => [
                     'required' => '{field} Harap Diisi',
                     'min_length' => ' {field} Harus 16 Digit',
