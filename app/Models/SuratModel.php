@@ -8,7 +8,6 @@ class SuratModel extends Model
 {
     protected $table                = 'tbl_ppdb';
     protected $primaryKey           = 'id_ppdb';
-
     protected $allowedFields        = [
         'nama_lengkap',
         'nisn',

@@ -66,7 +66,6 @@
                         <th>No Surat</th>
                         <th>Keterangan</th>
                         <th>Tanggal</th>
-
                     </tr>
                 </thead>
                 <tbody>
@@ -78,8 +77,8 @@
     </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<script src="<?= base_url() ?>/AdminLTE/plugins/jquery/jquery.min.js"></script>
 
 
 <script>
