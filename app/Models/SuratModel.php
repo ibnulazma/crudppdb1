@@ -14,5 +14,6 @@ class Suratmodel extends Model
         'tanggal_lahir',
         'alamat',
         'nama_ibu',
+        'nisn',
     ];
 }
