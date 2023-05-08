@@ -68,9 +68,9 @@ $ta = $db->table('tbl_ta')
                             <td class="text-center"><?= $value['jenjang'] ?></td>
                             <td><?= $value['sekolah'] ?></td>
                             <td>
-                                <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#detail<?= $value['id_ppdb'] ?>"><i class="fas fa-eye"></i></button>
-                                <button class="btn btn-warning btn-xs"><i class=" fas fa-pencil-alt" data-toggle="modal" data-target="#edit<?= $value['id_ppdb'] ?>"></i></button>
-                                <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#hapus<?= $value['id_ppdb'] ?>"><i class="fas fa-trash"></i></button>
+                                <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#detail<?= $value['id'] ?>"><i class="fas fa-eye"></i></button>
+                                <button class="btn btn-warning btn-xs"><i class=" fas fa-pencil-alt" data-toggle="modal" data-target="#edit<?= $value['id'] ?>"></i></button>
+                                <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#hapus<?= $value['id'] ?>"><i class="fas fa-trash"></i></button>
 
 
                             </td>
@@ -86,9 +86,9 @@ $ta = $db->table('tbl_ta')
 <!-- Edit -->
 
 <?php foreach ($ppdb as $key => $value) { ?>
-    <div class="modal fade" id="edit<?= $value['id_ppdb'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="edit<?= $value['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
-            <?php echo form_open('ppdb/edit/' . $value['id_ppdb']); ?>
+            <?php echo form_open('ppdb/edit/' . $value['id']); ?>
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Edit Biodata</h5>
@@ -170,7 +170,7 @@ $ta = $db->table('tbl_ta')
 
 <!-- detail -->
 <?php foreach ($ppdb as $key => $value) { ?>
-    <div class="modal fade" id="detail<?= $value['id_ppdb'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="detail<?= $value['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
 
             <div class="modal-content">
@@ -247,7 +247,7 @@ $ta = $db->table('tbl_ta')
 <!-- hapus -->
 
 <?php foreach ($ppdb as $key => $value) { ?>
-    <div class="modal fade" id="hapus<?= $value['id_ppdb'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="hapus<?= $value['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
 
             <div class="modal-content">
@@ -263,7 +263,7 @@ $ta = $db->table('tbl_ta')
                     </p>
                 </div>
                 <div class=" modal-footer">
-                    <a href="<?= base_url('ppdb/delete/' . $value['id_ppdb']) ?>" type="submit" class="btn btn-danger">Delete</a>
+                    <a href="<?= base_url('ppdb/delete/' . $value['id']) ?>" type="submit" class="btn btn-danger">Delete</a>
 
                 </div>
             </div>
