@@ -182,7 +182,7 @@ class Ppdb extends BaseController
 
         $data = [
 
-            'id_ppdb'       => $id_ppdb,
+            'id'       => $id_ppdb,
             'nik'           => $this->request->getPost('nik'),
             'nisn'          => $this->request->getPost('nisn'),
             'nama_lengkap'  => $this->request->getPost('nama_lengkap'),
