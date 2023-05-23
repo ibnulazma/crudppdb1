@@ -73,7 +73,7 @@ $ta = $db->table('tbl_ta')
             <h3 class="card-title"> Jumlah Peserta Didik Baru berdasarkan <strong> Asal Sekolah Tahun</strong> <?= $ta['ta'] ?></h3>
         </div>
         <div class="card-body">
-            <table class="table table-bordered" id="example2">
+            <table class="table table-bordered" id="example1">
                 <thead>
                     <tr>
                         <th>Nama Sekolah</th>
