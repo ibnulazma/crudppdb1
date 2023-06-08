@@ -155,12 +155,12 @@ foreach ($datatahun->getResult() as $row) {
         data: {
             labels: <?= json_encode($thun) ?>,
             datasets: [{
-                label: ' "# Pendaftar Berdasarkan Tahun Ajaran',
+                label: ' "# Pendaftar Berdasarkan Tahun Ajaran <?= json_encode($thun) ?>',
                 data: <?= json_encode($jmlah) ?>,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
-                    // 'rgba(255, 206, 86, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
                     // 'rgba(75, 192, 192, 0.2)',
                     // 'rgba(153, 102, 255, 0.2)',
                     // 'rgba(255, 159, 64, 0.2)'
@@ -178,9 +178,11 @@ foreach ($datatahun->getResult() as $row) {
         },
         options: {
             scales: {
-                y: {
-                    beginAtZero: true
-                }
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
             }
         }
     });
