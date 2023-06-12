@@ -207,7 +207,7 @@ class Ppdb extends BaseController
     public function delete($id_ppdb)
     {
         $data = [
-            'id_ppdb' => $id_ppdb,
+            'id' => $id_ppdb,
         ];
         $this->ModelPpdb->delete_data($data);
         session()->setFlashdata('pesan', 'Data Berhasil Di Hapus !!!');
