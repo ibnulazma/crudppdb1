@@ -44,6 +44,7 @@ $ta = $db->table('tbl_ta')
                         <th>No</th>
                         <th>Nama Lengkap</th>
                         <th>Jenis Kelamin</th>
+                        <th>NISN</th>
                         <th>No Telp</th>
                         <th>Alamat</th>
                         <th>Nama Ibu</th>
@@ -62,6 +63,7 @@ $ta = $db->table('tbl_ta')
                             <td><?= $no++ ?></td>
                             <td><?= ucwords($value['nama_lengkap']) ?></td>
                             <td><?= $value['jenis_kelamin'] ?></td>
+                            <td><?= $value['nisn'] ?></td>
                             <td><?= $value['no_telp'] ?></td>
                             <td><?= $value['alamat'] ?></td>
                             <td><?= $value['nama_ibu'] ?></td>
