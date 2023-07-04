@@ -290,12 +290,4 @@ class Ppdb extends BaseController
            ';
         }
     }
-
-
-    public function printpdf()
-    {
-        $data = [
-            'mi'         => $this->ModelPpdb->dataMI(),
-        ];
-    }
 }
