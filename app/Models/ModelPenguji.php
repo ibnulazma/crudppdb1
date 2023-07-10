@@ -13,4 +13,11 @@ class ModelPenguji extends Model
             'password' => $password
         ])->get()->getRowArray();
     }
+
+    public function AllData()
+    {
+        return $this->db->table('tbl_penguji')
+            ->get()
+            ->getResultArray();
+    }
 }

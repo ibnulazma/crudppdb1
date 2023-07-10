@@ -6,6 +6,7 @@ use App\Models\ModelPpdb;
 use App\Models\ModelTa;
 use App\Models\ModelSekolah;
 use App\Models\ModelJenjang;
+use App\Models\ModelPenguji;
 use Ifsnop\Mysqldump\Mysqldump;
 
 class Admin extends BaseController
@@ -19,6 +20,7 @@ class Admin extends BaseController
         $this->ModelTa      = new ModelTa();
         $this->ModelSekolah = new ModelSekolah();
         $this->ModelJenjang = new ModelJenjang();
+        $this->ModelPenguji = new ModelPenguji();
     }
 
 
@@ -292,5 +294,25 @@ class Admin extends BaseController
             'mi'         => $this->ModelPpdb->dataMI(),
         ];
         return view('ppdb/cetak_mi', $data);
+    }
+
+    public function penguji()
+    {
+        $data = [
+            'title'      => 'SIAKADINKA',
+            'subtitle'   => 'Penguji',
+            'penguji'       => $this->ModelPenguji->AllData(),
+
+        ];
+        return view('ppdb/penguji', $data);
+    }
+    public function ruangan()
+    {
+        $data = [
+            'title'      => 'SIAKADINKA',
+            'subtitle'   => 'Ruangan',
+            'penguji'       => $this->ModelPenguji->AllData(),
+        ];
+        return view('ppdb/ruangan', $data);
     }
 }

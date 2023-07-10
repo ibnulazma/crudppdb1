@@ -35,8 +35,8 @@ class Filters extends BaseConfig
                 'except' => [
                     'auth', 'auth/*',
                     'home', 'home/*',
+                    'penguji', 'penguji/*',
                     '/',
-                    'penguji/', 'penguji/*'
 
 
                 ]
@@ -72,7 +72,8 @@ class Filters extends BaseConfig
                     'mapel', 'mapel/*',
                     'tinggal', 'tinggal/*',
                     'transportasi', 'transportasi/*',
-                    'surat', 'surat/*',
+                    'penguji', 'penguji/*',
+                    'ruangan', 'ruangan/*',
 
                 ]
             ],
