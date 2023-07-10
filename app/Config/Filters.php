@@ -36,8 +36,8 @@ class Filters extends BaseConfig
                     'auth', 'auth/*',
                     'home', 'home/*',
                     '/',
-                    'daftar', 'daftar/*',
-                    'daftar_siswa', 'daftar_siswa/*',
+                    'penguji/', 'penguji/*'
+
 
                 ]
             ],
@@ -47,6 +47,7 @@ class Filters extends BaseConfig
                     'home', 'home/*',
                     '/',
                     'daftar', 'daftar/*',
+                    'penguji', 'penguji/*',
 
                 ]
             ],

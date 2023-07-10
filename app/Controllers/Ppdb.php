@@ -84,8 +84,6 @@ class Ppdb extends BaseController
             'sekolah'       => $this->ModelSekolah->AllData(),
             'jenjang'       => $this->ModelJenjang->AllData(),
             'validation'    =>  \Config\Services::validation(),
-
-
         ];
         return view('ppdb/v_add', $data);
     }
@@ -182,7 +180,7 @@ class Ppdb extends BaseController
 
         $data = [
 
-            'id'       => $id_ppdb,
+            'id'            => $id_ppdb,
             'nik'           => $this->request->getPost('nik'),
             'nisn'          => $this->request->getPost('nisn'),
             'nama_lengkap'  => $this->request->getPost('nama_lengkap'),
@@ -192,7 +190,7 @@ class Ppdb extends BaseController
             'nama_ibu'      => $this->request->getPost('nama_ibu'),
             'no_telp'       => $this->request->getPost('no_telp'),
             'tanggal_lahir' => $this->request->getPost('tanggal_lahir'),
-            'id_sekolah' => $this->request->getPost('id_sekolah'),
+            'id_sekolah'    => $this->request->getPost('id_sekolah'),
 
         ];
         $this->ModelPpdb->edit($data);

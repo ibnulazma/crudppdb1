@@ -102,7 +102,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <nav class="main-header navbar navbar-expand-md navbar-dark navbar-primary">
             <div class="container">
                 <a href="../../index3.html" class="navbar-brand">
-                    <span class="brand-text " style="font-weight: bold;">SIAKAD INKA</span>
+                    <span class="brand-text " style="font-weight: bold;">PPDB INKA</span>
                 </a>
 
                 <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -121,8 +121,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <li class="nav-item dropdown">
                             <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Login</a>
                             <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                                <li class="dropdown-divider"></li>
-                                <!-- End Level two -->
+                                <li><a href="<?= base_url('auth') ?>" class="dropdown-item">Admin </a></li>
+                                <li><a href="<?= base_url('penguji') ?>" class="dropdown-item">Penguji</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -34,10 +34,10 @@ class Admin extends BaseController
             'jumlahPerempuan'   => $this->ModelPpdb->jumlahPerempuan(),
             'jumlahSD'          => $this->ModelPpdb->jumlahSD(),
             'jumlahMI'          => $this->ModelPpdb->jumlahMI(),
-            'datasekolah'       => $this->ModelPpdb->group_by(),
+            'datasekolah'       => $this->ModelPpdb->group(),
             'datatahun'         => $this->ModelTa->group_tahun(),
             'tahun'             => $this->ModelTa->AllData(),
-            'dataanak'          => $this->ModelPpdb->group(),
+            // 'sekolah'          => $this->ModelPpdb->group(),
         ];
 
         return view('ppdb/v_beranda', $data);

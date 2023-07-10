@@ -83,7 +83,7 @@ $ta = $db->table('tbl_ta')
                 <tbody>
                     <?php
 
-                    foreach ($datasekolah->getResult() as $row) {
+                    foreach ($datasekolah->getResultArray() as $row) {
                         $th = $row->sekolah;
                         $jumlah = $row->jumlah;
                     ?>

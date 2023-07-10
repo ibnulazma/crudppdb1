@@ -47,7 +47,7 @@ class Home extends BaseController
 
 
         $data = [
-            'title'     => 'SIAKADINKA',
+            'title'     => 'PPDB SMP INKA',
             'subtitle'  => 'Home',
             'siswa'     => $orang->paginate(12, 'tbl_daftar'),
             'pager'     => $this->ModelSiswa->pager
