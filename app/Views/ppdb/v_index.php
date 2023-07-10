@@ -217,7 +217,7 @@ $ta = $db->table('tbl_ta')
                         <div class="col-md-6">
                             <strong></i> Alamat</strong>
                             <p class="text-muted">
-                                <i class="fas fa-map-marker-alt mr-2"> </i> <?= $value['alamat'] ?>, <?= $value['rt'] ?> / <?= $value['rw'] ?>
+                                <i class="fas fa-map-marker-alt mr-2"> </i> <?= $value['alamat']  ?>
                             </p>
                             <strong> Telp/Hp</strong>
                             <p class="text-muted">

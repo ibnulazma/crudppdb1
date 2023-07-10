@@ -34,7 +34,7 @@ class Admin extends BaseController
             'jumlahPerempuan'   => $this->ModelPpdb->jumlahPerempuan(),
             'jumlahSD'          => $this->ModelPpdb->jumlahSD(),
             'jumlahMI'          => $this->ModelPpdb->jumlahMI(),
-            'datasekolah'       => $this->ModelPpdb->group(),
+            'datasekolah'       => $this->ModelPpdb->group_by(),
             'datatahun'         => $this->ModelTa->group_tahun(),
             'tahun'             => $this->ModelTa->AllData(),
             // 'sekolah'          => $this->ModelPpdb->group(),
