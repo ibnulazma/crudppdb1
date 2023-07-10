@@ -54,6 +54,7 @@ $ta = $db->table('tbl_ta')
                         <input type="text" class="form-control" name="password">
                     </div>
                     <div class="form-group">
+                        <label for="">Nama Ruangan</label>
                         <select name="id_ruangan" id="" class="form-control">
                             <?php foreach ($ruangan as $row) { ?>
                                 <option value="<?= $row['id_ruangan'] ?>"><?= $row['ruangan'] ?></option>

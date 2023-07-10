@@ -183,7 +183,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         <li class="nav-item ">
                             <a href="<?= base_url('admin/penguji') ?>" class="nav-link ">
-                                <i class=" nav-icon fas fa-envelope"></i>
+                                <i class=" nav-icon fas fa-users"></i>
                                 <p>
                                     Penguji
                                 </p>
@@ -191,20 +191,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
                         <li class="nav-item ">
                             <a href="<?= base_url('admin/ruangan') ?>" class="nav-link ">
-                                <i class=" nav-icon fas fa-envelope"></i>
+                                <i class=" nav-icon fas fa-home"></i>
                                 <p>
                                     Ruangan
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item ">
-                            <a href="<?= base_url('admin/test') ?>" class="nav-link ">
-                                <i class=" nav-icon fas fa-envelope"></i>
-                                <p>
-                                    Ruang Test
-                                </p>
-                            </a>
-                        </li>
+
                         <li class="nav-item ">
                             <a href="<?= base_url('auth/logout') ?>" class="nav-link ">
                                 <i class=" nav-icon fas fa-sign-out-alt"></i>

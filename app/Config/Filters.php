@@ -74,6 +74,7 @@ class Filters extends BaseConfig
                     'transportasi', 'transportasi/*',
                     'penguji', 'penguji/*',
                     'ruangan', 'ruangan/*',
+                    'test', 'test/*',
 
                 ]
             ],

@@ -55,16 +55,18 @@ $ta = $db->table('tbl_ta')
                             <tr class="text-center">
                                 <th>No</th>
                                 <th>Nama Ruangan</th>
+                                <th widtht="50%">Rincian Test</th>
                             </tr>
                         </thead>
+                        
                         <tbody>
-
                             <?php
                             $no = 1;
                             foreach ($ruangan as $key => $value) { ?>
                                 <tr>
                                     <td><?= $no++ ?></td>
                                     <td><?= $value['ruangan'] ?></td>
+                                    <td><a href="<?= base_url('admin/rincianujian/' . $value['id_ruangan']) ?>" class="btn btn-primary"><i class="fas fa-home"></i></a></td>
                                 </tr>
                             <?php } ?>
                         </tbody>

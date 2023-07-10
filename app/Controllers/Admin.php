@@ -347,4 +347,46 @@ class Admin extends BaseController
         session()->setFlashdata('pesan', 'Peserta Didik Berhasil Ditambah');
         return redirect()->to('admin/ruangan');
     }
+
+
+    public function rincianujian($id_ruangan)
+
+    {
+
+        $data = [
+            'title'         => 'SIAKADINKA',
+            'subtitle'      => '',
+            'ruangan'         => $this->ModelRuangan->detail($id_ruangan),
+            'jml_siswa'     => $this->ModelRuangan->jml_siswa($id_ruangan),
+            'datasiswa'     => $this->ModelRuangan->datasiswa($id_ruangan),
+            'tidakpunya'    => $this->ModelRuangan->siswablmpuna(),
+
+
+            // 'tingkat'       => $this->ModelKelas->SiswaTingkat(),
+        ];
+
+        return view('ppdb/rincianujian', $data);
+    }
+
+    public function addanggota($id_siswa, $id_ruangan)
+    {
+        $data = [
+            'id' => $id_siswa,
+            'id_ruangan' => $id_ruangan,
+        ];
+        $this->ModelRuangan->add_data($data);
+        session()->setFlashdata('pesan', 'Siswa Berhasil Di Tambahkan !!!');
+        return redirect()->to(base_url('admin/rincianujian/' . $id_ruangan));
+    }
+
+    public function hps_data($id_siswa, $id_ruangan)
+    {
+        $data = [
+            'id' => $id_siswa,
+            'id_ruangan' => 0,
+        ];
+        $this->ModelRuangan->hps_data($data);
+        session()->setFlashdata('pesan', 'Siswa Berhasil Di Hapus Dari Kelas !!!');
+        return redirect()->to(base_url('admin/rincianujian/' . $id_ruangan));
+    }
 }

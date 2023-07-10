@@ -1,35 +1,33 @@
 <?= $this->extend('template/template-backend') ?>
 <?= $this->section('content') ?>
 
-<!-- Main content -->
 
 <div class="col-md-12">
     <div class="card card-primary">
         <div class="card-header">
-            <h3 class="card-title">Data Calon Siswa <?= $kelas['kelas'] ?></h3>
+            <!-- <h3 class="card-title">Data Siswa ruangan <?= $ruangan['ruangan'] ?></h3> -->
             <a class="btn btn-danger btn-xs float-right" data-toggle="modal" data-target="#tambah"> <i class="fas fa-plus"></i> Tambah</a>
-            <a class="btn btn-success btn-xs float-right mr-2" href="<?= base_url('kelas') ?>"> <i class="fas fa-backward"></i></i> Kembali</a>
+            <a class="btn btn-success btn-xs float-right mr-2" href="<?= base_url('admin/ruangan') ?>"> <i class="fas fa-backward"></i></i> Kembali</a>
         </div>
         <div class="card-body">
             <table class="table table-bordered mb-5">
                 <tr>
-                    <th width="100px">Wali Kelas</th>
+                    <th width="100px">Penguji ruangan</th>
                     <td width="20px">:</td>
-                    <td><?= $kelas['nama_guru'] ?></td>
+                    <td><?= $ruangan['nama_penguji'] ?></td>
                     <th>Jumlah </th>
                     <td width="20px">:</td>
                     <td><?= $jml_siswa ?></td>
                 </tr>
                 <tr>
-                    <th width="50px">Kelas</th>
+                    <th width="50px">ruangan</th>
                     <td width="30px">:</td>
-                    <td><?= $kelas['kelas'] ?></td>
+                    <td><?= $ruangan['ruangan'] ?></td>
                     <th>Tingkat</th>
                     <td width="20px">:</td>
-                    <td><?= $kelas['tingkat'] ?></td>
+                    <td><?= $ruangan['tahun'] ?></td>
                 </tr>
             </table>
-
 
             <?php if (session()->getFlashdata('pesan')) {
                 echo '<div class="alert alert-success" role="alert">';
@@ -52,13 +50,13 @@
                     $no = 1;
                     foreach ($datasiswa as $key => $value) { ?>
                         <tr>
-                            <td class="text-center"><a href="<?= base_url('kelas/detail_siswa/' . $value['id_siswa']) ?>"><i class="fas fa-user"></i></a></td>
                             <td class="text-center"><?= $value['nisn'] ?></td>
-                            <td><?= $value['nama_siswa'] ?></td>
+                            <td><?= $value['nama_lengkap'] ?></td>
                             <td><?= $value['jenis_kelamin'] ?></td>
+                            <td><?= $value['sekolah'] ?></td>
                             <td>
-                                <a href="<?= base_url('kelas/bukuinduk/' . $value['id_siswa']) ?>" class="btn btn-success btn-sm "><i class="fas fa-book"></i></a>
-                                <a href="<?= base_url('kelas/hapusanggota/' . $value['id_siswa'] . '/' . $kelas['id_kelas']) ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+
+                                <a href="<?= base_url('admin/hps_data/' . $value['id'] . '/' . $ruangan['id_ruangan']) ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php } ?>
@@ -68,17 +66,6 @@
         </div>
     </div>
 </div>
-
-
-
-
-<div class="col-md-12">
-
-
-
-</div>
-
-
 
 <!-- ModalTambah -->
 
@@ -107,15 +94,15 @@
                         <?php $no = 1;
                         foreach ($tidakpunya as $key => $value) { ?>
 
-                            <?php if ($kelas['id_tingkat'] == $value['id_tingkat']) { ?>
+                            <?php if ($ruangan['id_ta'] == $value['id_ta']) { ?>
                                 <tr>
                                     <td><?= $no++ ?></td>
-                                    <td><?= $value['nama_siswa'] ?></td>
+                                    <td><?= $value['nama_lengkap'] ?></td>
                                     <td><?= $value['nisn'] ?></td>
-                                    <td><?= $value['tingkat'] ?></td>
+                                    <td><?= $value['sekolah'] ?></td>
                                     <td><?= $value['jenis_kelamin'] ?></td>
                                     <td>
-                                        <a href="<?= base_url('kelas/addanggota/' . $value['id_siswa'] . '/' . $kelas['id_kelas']) ?>" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i></a>
+                                        <a href="<?= base_url('admin/addanggota/' . $value['id'] . '/' . $ruangan['id_ruangan']) ?>" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -126,17 +113,6 @@
         </div>
     </div>
 </div>
-
-
-<!-- ModalHapus -->
-
-
-
-
-
-
-
-<!-- Edit -->
 
 
 
