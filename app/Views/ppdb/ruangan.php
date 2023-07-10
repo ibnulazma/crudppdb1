@@ -33,26 +33,19 @@ $ta = $db->table('tbl_ta')
     } ?>
     <div class="card ">
         <div class="card-header">
-            <h3 class="card-title">Penguji Test Baca Al-Quran dan Latin <?= $ta['ta'] ?></h3>
+            <h3 class="card-title">Ruangan Test Baca Al-Quran dan Latin <?= $ta['ta'] ?></h3>
             <a class="btn btn-primary btn-xs float-right" href="<?= base_url('ppdb/tambahSiswa') ?>"> <i class="fas fa-plus"></i> Tambah</a>
             <a class="btn btn-success btn-xs float-right mr-2" href="<?= base_url('ppdb/cetak') ?>"> <i class="fas fa-print"></i> Cetak Laporan</a>
         </div>
         <div class="card-body">
             <div class="row">
                 <div class="col-md-4">
-                    <?= form_open() ?>
+                    <?= form_open('admin/saveruangan') ?>
                     <div class="form-group">
-                        <label for="">Nama Penguji</label>
-                        <input type="text" class="form-control" name="">
+                        <label for="">Nama Ruangan</label>
+                        <input type="text" class="form-control" name="ruangan">
                     </div>
-                    <div class="form-group">
-                        <label for="">Username</label>
-                        <input type="text" class="form-control" name="username">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Password</label>
-                        <input type="text" class="form-control" name="password">
-                    </div>
+
                     <button type="submit" class="btn btn-primary">Save</button>
                     <?= form_close() ?>
                 </div>
@@ -61,16 +54,18 @@ $ta = $db->table('tbl_ta')
                         <thead>
                             <tr class="text-center">
                                 <th>No</th>
-                                <th>Nama Lengkap</th>
-                                <th>Jenis Kelamin</th>
-                                <th>NISN</th>
+                                <th>Nama Ruangan</th>
                             </tr>
                         </thead>
                         <tbody>
 
                             <?php
                             $no = 1;
-                            foreach ($penguji as $key => $value) { ?>
+                            foreach ($ruangan as $key => $value) { ?>
+                                <tr>
+                                    <td><?= $no++ ?></td>
+                                    <td><?= $value['ruangan'] ?></td>
+                                </tr>
                             <?php } ?>
                         </tbody>
                     </table>

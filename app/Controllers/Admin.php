@@ -7,6 +7,7 @@ use App\Models\ModelTa;
 use App\Models\ModelSekolah;
 use App\Models\ModelJenjang;
 use App\Models\ModelPenguji;
+use App\Models\ModelRuangan;
 use Ifsnop\Mysqldump\Mysqldump;
 
 class Admin extends BaseController
@@ -21,6 +22,7 @@ class Admin extends BaseController
         $this->ModelSekolah = new ModelSekolah();
         $this->ModelJenjang = new ModelJenjang();
         $this->ModelPenguji = new ModelPenguji();
+        $this->ModelRuangan = new ModelRuangan();
     }
 
 
@@ -302,17 +304,47 @@ class Admin extends BaseController
             'title'      => 'SIAKADINKA',
             'subtitle'   => 'Penguji',
             'penguji'       => $this->ModelPenguji->AllData(),
+            'ruangan'       => $this->ModelRuangan->AllData(),
 
         ];
         return view('ppdb/penguji', $data);
     }
+
+    public function savepenguji()
+
+    {
+        $data = [
+            'nama_penguji'  => $this->request->getPost('nama_penguji'),
+            'username'           => $this->request->getPost('username'),
+            'password'           => $this->request->getPost('password'),
+            'id_ruangan'    => $this->request->getPost('id_ruangan'),
+
+        ];
+        $this->ModelPenguji->add($data);
+        session()->setFlashdata('pesan', 'Peserta Didik Berhasil Ditambah');
+        return redirect()->to('admin/penguji');
+    }
+
+
+
     public function ruangan()
     {
         $data = [
             'title'      => 'SIAKADINKA',
             'subtitle'   => 'Ruangan',
-            'penguji'       => $this->ModelPenguji->AllData(),
+            'ruangan'       => $this->ModelRuangan->AllData(),
         ];
         return view('ppdb/ruangan', $data);
+    }
+
+    public function saveruangan()
+
+    {
+        $data = [
+            'ruangan'  => $this->request->getPost('ruangan'),
+        ];
+        $this->ModelRuangan->add($data);
+        session()->setFlashdata('pesan', 'Peserta Didik Berhasil Ditambah');
+        return redirect()->to('admin/ruangan');
     }
 }

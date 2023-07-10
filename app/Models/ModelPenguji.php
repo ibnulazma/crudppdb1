@@ -16,8 +16,13 @@ class ModelPenguji extends Model
 
     public function AllData()
     {
-        return $this->db->table('tbl_penguji')
+        return $this->db->table('tbl_penguji')->join('tbl_ruangan', 'tbl_ruangan.id_ruangan= tbl_penguji.id_ruangan')
             ->get()
             ->getResultArray();
+    }
+    public function add($data)
+    {
+        $this->db->table('tbl_penguji')
+            ->insert($data);
     }
 }

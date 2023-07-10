@@ -40,10 +40,10 @@ $ta = $db->table('tbl_ta')
         <div class="card-body">
             <div class="row">
                 <div class="col-md-4">
-                    <?= form_open() ?>
+                    <?= form_open('admin/savepenguji') ?>
                     <div class="form-group">
                         <label for="">Nama Penguji</label>
-                        <input type="text" class="form-control" name="">
+                        <input type="text" class="form-control" name="nama_penguji">
                     </div>
                     <div class="form-group">
                         <label for="">Username</label>
@@ -52,6 +52,13 @@ $ta = $db->table('tbl_ta')
                     <div class="form-group">
                         <label for="">Password</label>
                         <input type="text" class="form-control" name="password">
+                    </div>
+                    <div class="form-group">
+                        <select name="id_ruangan" id="" class="form-control">
+                            <?php foreach ($ruangan as $row) { ?>
+                                <option value="<?= $row['id_ruangan'] ?>"><?= $row['ruangan'] ?></option>
+                            <?php } ?>
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Save</button>
                     <?= form_close() ?>
@@ -62,8 +69,9 @@ $ta = $db->table('tbl_ta')
                             <tr class="text-center">
                                 <th>No</th>
                                 <th>Nama Lengkap</th>
-                                <th>Jenis Kelamin</th>
-                                <th>NISN</th>
+                                <th>Username</th>
+                                <th>Password</th>
+                                <th>Ruangan</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -71,6 +79,13 @@ $ta = $db->table('tbl_ta')
                             <?php
                             $no = 1;
                             foreach ($penguji as $key => $value) { ?>
+                                <tr>
+                                    <td><?= $no++ ?></td>
+                                    <td><?= $value['nama_penguji'] ?></td>
+                                    <td><?= $value['username'] ?></td>
+                                    <td><?= $value['password'] ?></td>
+                                    <td><?= $value['ruangan'] ?></td>
+                                </tr>
                             <?php } ?>
                         </tbody>
                     </table>
