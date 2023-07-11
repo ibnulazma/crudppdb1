@@ -305,10 +305,13 @@ class Admin extends BaseController
             'subtitle'   => 'Penguji',
             'penguji'       => $this->ModelPenguji->AllData(),
             'ruangan'       => $this->ModelRuangan->AllData(),
+            'detail'       => $this->ModelPenguji->AllData(),
 
         ];
         return view('ppdb/penguji', $data);
     }
+
+
 
     public function savepenguji()
 
@@ -323,8 +326,19 @@ class Admin extends BaseController
         session()->setFlashdata('pesan', 'Peserta Didik Berhasil Ditambah');
         return redirect()->to('admin/penguji');
     }
+    public function editpenguji($id_penguji)
+    {
+        $data = [
+            'id_penguji'  => $id_penguji,
+            'username'           => $this->request->getPost('username'),
+            'password'           => $this->request->getPost('password'),
+            'nama_penguji'           => $this->request->getPost('nama_penguji'),
 
-
+        ];
+        $this->ModelPenguji->edit($data);
+        session()->setFlashdata('pesan', 'Peserta Didik Berhasil Ditambah');
+        return redirect()->to('admin/penguji');
+    }
 
     public function ruangan()
     {

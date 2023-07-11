@@ -2,6 +2,9 @@
 <?= $this->section('content') ?>
 
 <?php
+
+use Sabberworm\CSS\Value\Value;
+
 $db     = \Config\Database::connect();
 
 
@@ -76,15 +79,48 @@ $ta = $db->table('tbl_ta')
                                     <td><?= $value['nama_penguji'] ?></td>
                                     <td><?= $value['username'] ?></td>
                                     <td><?= $value['password'] ?></td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit<?= $value['id_penguji'] ?>"><i class="fas fa-pencil-alt"></i></button>
+                                    </td>
                                 </tr>
                             <?php } ?>
                         </tbody>
                     </table>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
+<?php foreach ($detail as $key => $value) { ?>
+    <div class="modal fade" id="edit<?= $value['id_penguji'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <?= form_open('admin/editpenguji/' . $value['id_penguji']) ?>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Detail Calon PPDB</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="">Nama Penguji</label>
+                    <input type="text" class="form-control" value="<?= $value['nama_penguji'] ?>" name="nama_penguji">
+                </div>
+                <div class="modal-body">
+                    <label for="">Username</label>
+                    <input type="text" class="form-control" value="<?= $value['username'] ?>" name="username">
+                </div>
+                <div class="modal-body">
+                    <label for="">Password</label>
+                    <input type="text" class="form-control" value="<?= $value['password'] ?>" name="password">
+                </div>
+                <div class=" modal-footer">
+                    <button type="submit" class="btn btn-danger pull-left">Submit</button>
+                </div>
+            </div>
+            <?= form_close() ?>
+        </div>
+    </div>
 
+<?php } ?>
 <?= $this->endSection() ?>

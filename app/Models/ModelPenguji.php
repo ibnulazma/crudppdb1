@@ -45,4 +45,18 @@ class ModelPenguji extends Model
             ->where('tbl_ta.id_ta', '4')
             ->get()->getResultArray();
     }
+
+    public function detail($id_penguji)
+    {
+        return $this->db->table('tbl_penguji')
+            ->where('id_penguji', $id_penguji)
+            ->get()->getRowArray();
+    }
+
+    public function edit($data)
+    {
+        $this->db->table('tbl_penguji')
+            ->where('id_penguji', $data['id_penguji'])
+            ->update($data);
+    }
 }
