@@ -122,7 +122,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Login</a>
                             <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
                                 <li><a href="<?= base_url('auth') ?>" class="dropdown-item">Admin </a></li>
-                                <li><a href="<?= base_url('penguji') ?>" class="dropdown-item">Penguji</a></li>
+                                <li><a href="<?= base_url('loginuser') ?>" class="dropdown-item">Penguji</a></li>
                             </ul>
                         </li>
                     </ul>

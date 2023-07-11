@@ -6,7 +6,7 @@ use CodeIgniter\Filters\FilterInterface;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 
-class FilterSiswa implements FilterInterface
+class FilterPenguji implements FilterInterface
 {
     /**
      * Do whatever processing this filter needs to do.
@@ -45,8 +45,8 @@ class FilterSiswa implements FilterInterface
      */
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        if (session()->get('level') == 'siswa') {
-            return redirect()->to('/siswa');
+        if (session()->get('level') == 'penguji') {
+            return redirect()->to('/penguji');
         }
     }
 }

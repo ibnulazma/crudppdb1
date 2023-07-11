@@ -36,10 +36,10 @@
 
 
 
-            <?php echo form_open('auth/cek_login_user') ?>
+            <?php echo form_open('loginuser/cek_login_penguji') ?>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+                <input type="email" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">

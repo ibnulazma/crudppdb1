@@ -20,7 +20,7 @@ class Filters extends BaseConfig
         'toolbar'  => DebugToolbar::class,
         'honeypot' => Honeypot::class,
         'filteruser' => \App\Filters\FilterUser::class,
-        'filtersiswa' => \App\Filters\FilterSiswa::class,
+        'filterpenguji' => \App\Filters\FilterPenguji::class,
     ];
 
     /**
@@ -35,19 +35,20 @@ class Filters extends BaseConfig
                 'except' => [
                     'auth', 'auth/*',
                     'home', 'home/*',
-                    'penguji', 'penguji/*',
+                    'loginuser', 'loginuser/*',
                     '/',
 
 
                 ]
             ],
-            'filtersiswa' => [
+            'filterpenguji' => [
                 'except' => [
                     'auth', 'auth/*',
                     'home', 'home/*',
                     '/',
                     'daftar', 'daftar/*',
                     'penguji', 'penguji/*',
+                    'loginuser', 'loginuser/*',
 
                 ]
             ],
@@ -78,12 +79,11 @@ class Filters extends BaseConfig
 
                 ]
             ],
-            'filtersiswa' => [
+            'filterpenguji' => [
                 'except' => [
                     'home', 'home/*',
                     '/',
-                    'siswa', 'siswa/*',
-                    'wilayah', 'wilayah/*',
+                    'penguji', 'penguji/*',
 
                 ]
             ],

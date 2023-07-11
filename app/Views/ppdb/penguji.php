@@ -53,14 +53,6 @@ $ta = $db->table('tbl_ta')
                         <label for="">Password</label>
                         <input type="text" class="form-control" name="password">
                     </div>
-                    <div class="form-group">
-                        <label for="">Nama Ruangan</label>
-                        <select name="id_ruangan" id="" class="form-control">
-                            <?php foreach ($ruangan as $row) { ?>
-                                <option value="<?= $row['id_ruangan'] ?>"><?= $row['ruangan'] ?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
                     <button type="submit" class="btn btn-primary">Save</button>
                     <?= form_close() ?>
                 </div>
@@ -72,7 +64,6 @@ $ta = $db->table('tbl_ta')
                                 <th>Nama Lengkap</th>
                                 <th>Username</th>
                                 <th>Password</th>
-                                <th>Ruangan</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -85,7 +76,6 @@ $ta = $db->table('tbl_ta')
                                     <td><?= $value['nama_penguji'] ?></td>
                                     <td><?= $value['username'] ?></td>
                                     <td><?= $value['password'] ?></td>
-                                    <td><?= $value['ruangan'] ?></td>
                                 </tr>
                             <?php } ?>
                         </tbody>

@@ -317,7 +317,6 @@ class Admin extends BaseController
             'nama_penguji'  => $this->request->getPost('nama_penguji'),
             'username'           => $this->request->getPost('username'),
             'password'           => $this->request->getPost('password'),
-            'id_ruangan'    => $this->request->getPost('id_ruangan'),
 
         ];
         $this->ModelPenguji->add($data);
@@ -333,6 +332,7 @@ class Admin extends BaseController
             'title'      => 'SIAKADINKA',
             'subtitle'   => 'Ruangan',
             'ruangan'       => $this->ModelRuangan->AllData(),
+            'penguji'       => $this->ModelPenguji->AllData(),
         ];
         return view('ppdb/ruangan', $data);
     }
@@ -340,8 +340,15 @@ class Admin extends BaseController
     public function saveruangan()
 
     {
+        $db     = \Config\Database::connect();
+
+        $ta = $db->table('tbl_ta')
+            ->where('status', '1')
+            ->get()->getRowArray();
         $data = [
             'ruangan'  => $this->request->getPost('ruangan'),
+            'id_penguji'  => $this->request->getPost('id_penguji'),
+            'id_ta'         => $ta['id_ta']
         ];
         $this->ModelRuangan->add($data);
         session()->setFlashdata('pesan', 'Peserta Didik Berhasil Ditambah');
@@ -388,5 +395,16 @@ class Admin extends BaseController
         $this->ModelRuangan->hps_data($data);
         session()->setFlashdata('pesan', 'Siswa Berhasil Di Hapus Dari Kelas !!!');
         return redirect()->to(base_url('admin/rincianujian/' . $id_ruangan));
+    }
+
+    public function deleteruang($id_ruangan)
+    {
+        $data = [
+            'id_ruangan' => $id_ruangan,
+
+        ];
+        $this->ModelRuangan->hps_ruang($data);
+        session()->setFlashdata('pesan', 'Siswa Berhasil Di Hapus Dari Kelas !!!');
+        return redirect()->to(base_url('admin/ruangan/' . $id_ruangan));
     }
 }

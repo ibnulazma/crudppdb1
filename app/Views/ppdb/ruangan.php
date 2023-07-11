@@ -45,6 +45,14 @@ $ta = $db->table('tbl_ta')
                         <label for="">Nama Ruangan</label>
                         <input type="text" class="form-control" name="ruangan">
                     </div>
+                    <div class="form-group">
+                        <label for="">Nama Penguji</label>
+                        <select name="id_penguji" id="" class="form-control">
+                            <?php foreach ($penguji as $row) { ?>
+                                <option value="<?= $row['id_penguji'] ?>"><?= $row['nama_penguji'] ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
 
                     <button type="submit" class="btn btn-primary">Save</button>
                     <?= form_close() ?>
@@ -55,10 +63,11 @@ $ta = $db->table('tbl_ta')
                             <tr class="text-center">
                                 <th>No</th>
                                 <th>Nama Ruangan</th>
-                                <th widtht="50%">Rincian Test</th>
+                                <th>Nama Penguji</th>
+                                <th widtht="50%">Nama Ruang</th>
                             </tr>
                         </thead>
-                        
+
                         <tbody>
                             <?php
                             $no = 1;
@@ -66,7 +75,13 @@ $ta = $db->table('tbl_ta')
                                 <tr>
                                     <td><?= $no++ ?></td>
                                     <td><?= $value['ruangan'] ?></td>
-                                    <td><a href="<?= base_url('admin/rincianujian/' . $value['id_ruangan']) ?>" class="btn btn-primary"><i class="fas fa-home"></i></a></td>
+                                    <td><?= $value['nama_penguji'] ?></td>
+
+                                    <td>
+                                        <a href="<?= base_url('admin/rincianujian/' . $value['id_ruangan']) ?>" class="btn btn-primary"><i class="fas fa-home"></i></a>
+                                        <a href="<?= base_url('admin/deleteruang/' . $value['id_ruangan']) ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                    </td>
+
                                 </tr>
                             <?php } ?>
                         </tbody>

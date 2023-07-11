@@ -10,6 +10,7 @@ class ModelRuangan extends Model
     public function AllData()
     {
         return $this->db->table('tbl_ruangan')
+            ->join('tbl_penguji', 'tbl_penguji.id_penguji = tbl_ruangan.id_penguji')
             ->get()
             ->getResultArray();
     }
@@ -32,6 +33,12 @@ class ModelRuangan extends Model
         $this->db->table('siswa')
             ->where('id', $data['id'])
             ->update($data);
+    }
+    public function hps_ruang($data)
+    {
+        $this->db->table('tbl_ruangan')
+            ->where('id_ruangan', $data['id_ruangan'])
+            ->delete($data);
     }
 
     public function detail($id_ruangan)
