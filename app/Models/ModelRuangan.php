@@ -15,6 +15,14 @@ class ModelRuangan extends Model
             ->getResultArray();
     }
 
+    public function SemuaNilai()
+    {
+        return $this->db->table('tbl_nilai')
+            ->join('siswa', 'siswa.id = tbl_nilai.id_siswa')
+            ->get()
+            ->getResultArray();
+    }
+
     public function add($data)
     {
         $this->db->table('tbl_ruangan')

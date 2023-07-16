@@ -197,6 +197,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item ">
+                            <a href="<?= base_url('admin/nilai') ?>" class="nav-link ">
+                                <i class=" nav-icon fas fa-home"></i>
+                                <p>
+                                    Nilai
+                                </p>
+                            </a>
+                        </li>
 
                         <li class="nav-item ">
                             <a href="<?= base_url('auth/logout') ?>" class="nav-link ">

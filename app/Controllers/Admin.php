@@ -388,6 +388,20 @@ class Admin extends BaseController
 
         return view('ppdb/rincianujian', $data);
     }
+    public function nilai()
+
+    {
+
+        $data = [
+            'title'         => 'SIAKADINKA',
+            'subtitle'      => 'Hasil Test',
+            'nilai'         => $this->ModelRuangan->SemuaNilai(),
+
+            // 'tingkat'       => $this->ModelKelas->SiswaTingkat(),
+        ];
+
+        return view('ppdb/nilai', $data);
+    }
 
     public function addanggota($id_siswa, $id_ruangan)
     {

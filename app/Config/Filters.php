@@ -48,7 +48,7 @@ class Filters extends BaseConfig
                     '/',
                     'daftar', 'daftar/*',
                     'penguji', 'penguji/*',
-                    'loginuser', 'loginuser/*',
+
 
                 ]
             ],
@@ -76,6 +76,7 @@ class Filters extends BaseConfig
                     'penguji', 'penguji/*',
                     'ruangan', 'ruangan/*',
                     'test', 'test/*',
+                    'nilai', 'nilai/*',
 
                 ]
             ],

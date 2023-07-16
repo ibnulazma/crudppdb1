@@ -21,9 +21,21 @@ class ModelPenguji extends Model
             ->get()
             ->getResultArray();
     }
+    public function AllNilai()
+    {
+        return $this->db->table('tbl_nilai')
+            ->join('siswa', 'siswa.id= tbl_nilai.id_siswa')
+            ->get()
+            ->getResultArray();
+    }
     public function add($data)
     {
         $this->db->table('tbl_penguji')
+            ->insert($data);
+    }
+    public function add_nilai($data)
+    {
+        $this->db->table('tbl_nilai')
             ->insert($data);
     }
 
