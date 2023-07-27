@@ -54,7 +54,7 @@ $ta = $db->table('tbl_ta')
                                 <th>Bentuk Test</th>
                                 <th>Nilai Test</th>
                                 <th>Huruf Latin</th>
-                                <th>Catata</th>
+                                <th>Catatan</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -70,6 +70,7 @@ $ta = $db->table('tbl_ta')
                                     <td><?= $value['btq'] ?></td>
                                     <td><?= $value['nilaibtq'] ?></td>
                                     <td><?= $value['nilailatin'] ?></td>
+                                    <td><?= $value['catatan'] ?></td>
                                 </tr>
                             <?php } ?>
                         </tbody>

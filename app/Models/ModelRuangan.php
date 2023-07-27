@@ -19,6 +19,7 @@ class ModelRuangan extends Model
     {
         return $this->db->table('tbl_nilai')
             ->join('siswa', 'siswa.id = tbl_nilai.id_siswa')
+            ->orderBy('nama_lengkap', 'ASC')
             ->get()
             ->getResultArray();
     }
